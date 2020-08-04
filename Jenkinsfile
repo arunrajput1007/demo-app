@@ -4,20 +4,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo "cleaning pre existed jar"
-                sh 'mvn clean'
+                bat 'mvn clean'
                 echo "cleaning pre existed jar"
-                sh 'mvn compile'
+                bat 'mvn compile'
             }
         }
         stage('Unit Test') {
             steps {
                 echo "running unit tests"
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Building Jar') {
             steps {
-                sh 'mvn install'
+                bat 'mvn install'
             }
         }
     }
