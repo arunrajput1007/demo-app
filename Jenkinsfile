@@ -4,9 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo "cleaning pre existed jar"
-                bat './mvnw clean'
+                bat "./mvnw clean"
                 echo "cleaning pre existed jar"
-                bat './mvnw compile'
+                bat "./mvnw compile"
             }
         }
         stage('Unit Test') {
