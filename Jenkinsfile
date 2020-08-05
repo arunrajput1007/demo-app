@@ -4,15 +4,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo "cleaning pre existed jar"
-                bat 'mvn clean'
+                bat './mvnw clean'
                 echo "cleaning pre existed jar"
-                bat 'mvn compile'
+                bat './mvnw compile'
             }
         }
         stage('Unit Test') {
             steps {
                 echo "running unit tests"
-                bat 'mvn test'
+                bat './mvnw test'
             }
         }
         stage('Publish Test Coverage Report') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Building Jar') {
             steps {
-                bat 'mvn install'
+                bat './mvnw install'
             }
         }
     }
